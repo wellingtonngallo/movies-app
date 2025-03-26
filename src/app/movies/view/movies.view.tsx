@@ -10,12 +10,14 @@ import {
 } from "@mui/material"
 import Image from "next/image"
 import { format } from "date-fns"
+import Link from "next/link"
 
 interface TrendingViewProps {
   data?: MovieProps[]
   isLoading: boolean
 }
-export default function MoviesView({ data, isLoading }: TrendingViewProps) {
+
+const MoviesView = ({ data, isLoading }: TrendingViewProps) => {
   return (
     <>
       <div className="grid grid-cols-4 gap-4">
@@ -43,7 +45,9 @@ export default function MoviesView({ data, isLoading }: TrendingViewProps) {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small">Leia mais</Button>
+                <Link href={`/movies/${movie.id}`}>
+                  <Button size="small">Leia mais</Button>
+                </Link>
               </CardActions>
             </Card>
           )
@@ -65,3 +69,5 @@ export default function MoviesView({ data, isLoading }: TrendingViewProps) {
     </>
   )
 }
+
+export default MoviesView
