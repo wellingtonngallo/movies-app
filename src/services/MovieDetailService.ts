@@ -12,11 +12,11 @@ export interface MovieDetails {
   title: string
 }
 export interface IMovieDetailService {
-  get: (id: number) => Promise<MovieDetails[]>
+  get: (id: string) => Promise<MovieDetails[]>
 }
 
 export class MovieDetailService implements IMovieDetailService {
-  async get(id: number) {
+  async get(id: string) {
     const { data } = await api.get(`movie/${id}`)
 
     return data

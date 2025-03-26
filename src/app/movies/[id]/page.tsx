@@ -3,9 +3,9 @@ import { MovieDetailService } from "@/services/MovieDetailService"
 import { MovieDetailView } from "./view/movieDetail.view"
 
 type MovieDetailsPageProps = {
-  params: {
-    id: number
-  }
+  params: Promise<{
+    id: string
+  }>
 }
 
 const MovieDetailsPage = async ({ params }: MovieDetailsPageProps) => {
