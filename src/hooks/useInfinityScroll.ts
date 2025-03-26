@@ -19,8 +19,8 @@ export const useInfinityScroll = ({ fetchNextPage, hasNextPage, isFetchingNextPa
   }, 1000)
 
   useEffect(() => {
-    window.addEventListener('scroll', debouncedHandleScroll)
+    window.addEventListener("scroll", debouncedHandleScroll)
 
-    return () => window.removeEventListener('scroll', debouncedHandleScroll)
+    return () => window.removeEventListener("scroll", debouncedHandleScroll)
   }, [debouncedHandleScroll, fetchNextPage, hasNextPage, isFetchingNextPage])
 }
